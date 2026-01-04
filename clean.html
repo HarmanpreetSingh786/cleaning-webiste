@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshNest Cleaning Services</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* HERO */
+    header {
+      background: linear-gradient(135deg, #1e90ff, #00bcd4);
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+    }
+
+    header p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 32px;
+      background: #fff;
+      color: #1e90ff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: #1e90ff;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #00bcd4;
+      margin-bottom: 10px;
+    }
+
+    /* WHY US */
+    .why-us {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .why-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #1e90ff;
+      color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      border-radius: 30px;
+      border: none;
+      background: #fff;
+      color: #1e90ff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 22px;
+      margin: 0 10px;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: #fff;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 28px;
+      line-height: 55px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>SUKHVEER HOME & OFFICE CARE SERVICES</h1>
+  <H3>JALANDHAR</H3>
+  <p>Sofa • Table • Carpet • Mattress Deep Cleaning • AC Wet Wash • Water Tank Cleaning</p>
+  <a href="#contact" class="btn">Book Now</a>
+</header>
+
+<section>
+  <div class="section-title">
+    <h2>Our Services</h2>
+  </div>
+
+  <div class="services">
+    <div class="service-card">
+      <img src="images/sofa.jpg" alt="Sofa Cleaning">
+      <h3>Sofa Cleaning</h3>
+      <p>Deep cleaning to remove stains, dust & bad odor.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/table.jpg" alt="Table Cleaning">
+      <h3>Table & Chair Cleaning</h3>
+      <p>Restore shine and hygiene to your furniture.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/carpet.jpg" alt="Carpet Cleaning">
+      <h3>Carpet Cleaning</h3>
+      <p>Removes dirt, bacteria & allergens effectively.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/mattress.jpg" alt="Mattress Cleaning">
+      <h3>Mattress Cleaning</h3>
+      <p>Eliminates dust mites for healthy sleep.</p>
+    </div>
+    <div class="service-card">
+      <img src="images/ac.jpg" alt="AC Cleaning">
+      <h3>AC Cleaning</h3>
+      <p>Deep wet wash cleaning for AC units to remove dust, bacteria & improve cooling efficiency.</p>
+    </div>
+    <div class="service-card">
+      <img src="images/watertank.jpg" alt="WaterTank Cleaning">
+      <h3>Water Tank Cleaning</h3>
+      <p>Complete water tank wash to remove sludge, algae & bacteria for safe and hygienic water.</p>
+    </div>
+  </div>
+</section>
+<section id="reviews">
+  <div class="section-title">
+    <h2>Customer Reviews</h2>
+  </div>
+
+  <!-- Static Reviews -->
+  <div class="reviews">
+    <div class="review-card">
+      <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+      <p>"Excellent sofa cleaning service. Very professional and on time!"</p>
+      <span>- Rahul Sharma</span>
+    </div>
+
+    <div class="review-card">
+      <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+      <p>"My mattress looks brand new. Highly recommended."</p>
+      <span>- Neha Verma</span>
+    </div>
+
+    <div class="review-card">
+      <h4>⭐ ⭐ ⭐ ⭐</h4>
+      <p>"Affordable and good quality cleaning work."</p>
+      <span>- Amit Singh</span>
+    </div>
+  </div>
+
+  <!-- Comment Form -->
+  <div class="comment-box">
+    <h3>Add Your Review</h3>
+    <form onsubmit="addReview(); return false;">
+      <input type="text" id="reviewName" placeholder="Your Name" required>
+      <textarea id="reviewText" rows="4" placeholder="Your Review" required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+
+  <!-- User Reviews -->
+  <div id="userReviews" class="reviews"></div>
+</section>
+<section>
+  <div class="section-title">
+    <h2>Why Choose Us</h2>
+  </div>
+
+  <div class="why-us">
+    <div class="why-box">✔ Trained Professionals</div>
+    <div class="why-box">✔ Eco-Friendly Products</div>
+    <div class="why-box">✔ Affordable Pricing</div>
+    <div class="why-box">✔ On-Time Service</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>How It Works</h2>
+  </div>
+
+  <div class="steps">
+    <div class="step">1️⃣ Book Your Service</div>
+    <div class="step">2️⃣ We Deep Clean</div>
+    <div class="step">3️⃣ Enjoy a Fresh Home</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2>Send Details on WhatsApp</h2>
+
+    <form onsubmit="sendWhatsApp(); return false;">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Mobile Number" required>
+      <input type="text" id="service" placeholder="Service Required">
+      <textarea id="message" rows="4" placeholder="Message"></textarea>
+      <button type="submit">Send on WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 FreshNest Cleaning Services  
+  <div class="social-icons">
+    <a href="https://www.instagram.com/sukhveerhomecare" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/917355898908" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</footer>
+<a href="https://wa.me/917355898908" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+function sendWhatsApp() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let service = document.getElementById("service").value;
+  let message = document.getElementById("message").value;
+
+  let text = `Name: ${name}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+  let url = `https://wa.me/917355898908?text=${text}`;
+
+  window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
