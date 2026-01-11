@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUKHVEER HOME & OFFICE CARE SERVICES</title>
+  <title>FreshNest Cleaning Services</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -273,6 +273,176 @@
 .comment-box textarea {
   margin-bottom: 15px;  /* space below review text */
 }
+/* THEME TOGGLE BUTTON */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+
+  /* CENTER ICON */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+
+/* DARK MODE */
+body.dark {
+  background: #121212;
+  color: #eaeaea;
+}
+
+body.dark header {
+  background: linear-gradient(135deg, #000, #333);
+}
+
+body.dark section {
+  background: transparent;
+}
+
+body.dark .service-card,
+body.dark .why-box,
+body.dark .review-card {
+  background: #1e1e1e;
+  color: #eaeaea;
+}
+
+body.dark .contact {
+  background: #1e1e1e;
+}
+
+body.dark footer {
+  background: #000;
+}
+
+body.dark .btn {
+  background: #1e90ff;
+  color: #fff;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body.dark .comment-box {
+  background: #1e1e1e;
+}
+/* PRICE BADGE */
+.starting-price {
+  display: inline-block;
+  background: #e6f4ff;
+  color: #1e90ff;
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* PRICE LIST */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  background: #f5f9ff;
+  border-radius: 12px;
+
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.price-list li {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* CHEAPEST HIGHLIGHT */
+.price-list li.best {
+  background: #1e90ff;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* DESKTOP HOVER */
+@media (hover: hover) {
+  .service-card:hover .price-list {
+    opacity: 1;
+    max-height: 300px;
+  }
+}
+
+/* MOBILE BUTTON */
+.price-toggle {
+  display: none;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* SHOW BUTTON ON MOBILE */
+@media (max-width: 768px) {
+  .price-toggle {
+    display: inline-block;
+  }
+}
+
+/* ACTIVE STATE */
+.price-list.show {
+  opacity: 1;
+  max-height: 300px;
+}
+/* DARK MODE – PRICE TEXT */
+body.dark .price-list li {
+  color: #fff;
+}
+
+body.dark .price-list {
+  background: #1e1e1e;
+}
+
+/* MOBILE POPUP DARK MODE */
+body.dark .popup-content {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.dark .popup-content li {
+  color: #fff;
+  border-bottom: 1px solid #333;
+}
+
+body.dark .popup-content li:first-child {
+  background: #1e90ff;
+  color: #fff;
+}
+
+body.dark .close-popup {
+  color: #fff;
+}
+body.dark .price-list {
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
+}
+
 
     @media (max-width: 768px) {
       header h1 {
@@ -290,7 +460,9 @@
   <p>Sofa • Table • Carpet • Mattress Deep Cleaning • AC Wet Wash • Water Tank Cleaning</p>
   <a href="#contact" class="btn">Book Now</a>
 </header>
-
+<button id="themeToggle" class="theme-toggle">
+  🌙
+</button>
 <section>
   <div class="section-title">
     <h2>Our Services</h2>
@@ -301,34 +473,113 @@
       <img src="images/sofa.jpg" alt="Sofa Cleaning">
       <h3>Sofa Cleaning</h3>
       <p>Deep cleaning to remove stains, dust & bad odor.</p>
+       <span class="starting-price">Starting from ₹250</span>
+  <!-- MOBILE BUTTON -->
+  <button class="price-toggle" onclick="togglePrice(this)">
+    View Prices
+  </button>
+
+  <!-- PRICE LIST -->
+  <ul class="price-list">
+    <li class="best">⭐ Single Seat – ₹250</li>
+    <li>2 Seater – ₹450</li>
+    <li>3 Seater – ₹650</li>
+    <li>5 Seater – ₹999</li>
+  </ul>
     </div>
 
     <div class="service-card">
       <img src="images/table.jpg" alt="Table Cleaning">
       <h3>Table & Chair Cleaning</h3>
       <p>Restore shine and hygiene to your furniture.</p>
+       <span class="starting-price">Starting from ₹250</span>
+  <!-- MOBILE BUTTON -->
+  <button class="price-toggle" onclick="togglePrice(this)">
+    View Prices
+  </button>
+
+  <!-- PRICE LIST -->
+  <ul class="price-list">
+    <li class="best">⭐ Single Seat – ₹250</li>
+    <li>2 Seater – ₹450</li>
+    <li>3 Seater – ₹650</li>
+    <li>5 Seater – ₹999</li>
+  </ul>
     </div>
 
     <div class="service-card">
       <img src="images/carpet.jpg" alt="Carpet Cleaning">
       <h3>Carpet Cleaning</h3>
       <p>Removes dirt, bacteria & allergens effectively.</p>
+       <span class="starting-price">Starting from ₹250</span>
+  <!-- MOBILE BUTTON -->
+  <button class="price-toggle" onclick="togglePrice(this)">
+    View Prices
+  </button>
+
+  <!-- PRICE LIST -->
+  <ul class="price-list">
+    <li class="best">⭐ Single Seat – ₹250</li>
+    <li>2 Seater – ₹450</li>
+    <li>3 Seater – ₹650</li>
+    <li>5 Seater – ₹999</li>
+  </ul>
     </div>
 
     <div class="service-card">
       <img src="images/mattress.jpg" alt="Mattress Cleaning">
       <h3>Mattress Cleaning</h3>
       <p>Eliminates dust mites for healthy sleep.</p>
+     <span class="starting-price">Starting from ₹250</span>
+  <!-- MOBILE BUTTON -->
+  <button class="price-toggle" onclick="togglePrice(this)">
+    View Prices
+  </button>
+
+  <!-- PRICE LIST -->
+  <ul class="price-list">
+    <li class="best">⭐ Single Seat – ₹250</li>
+    <li>2 Seater – ₹450</li>
+    <li>3 Seater – ₹650</li>
+    <li>5 Seater – ₹999</li>
+  </ul>
     </div>
     <div class="service-card">
       <img src="images/ac.jpg" alt="AC Cleaning">
       <h3>AC Cleaning</h3>
       <p>Deep wet wash cleaning for AC units to remove dust, bacteria & improve cooling efficiency.</p>
+      <span class="starting-price">Starting from ₹250</span>
+
+  <!-- MOBILE BUTTON -->
+  <button class="price-toggle" onclick="togglePrice(this)">
+    View Prices
+  </button>
+
+  <!-- PRICE LIST -->
+  <ul class="price-list">
+    <li class="best">⭐ Single Seat – ₹250</li>
+    <li>2 Seater – ₹450</li>
+    <li>3 Seater – ₹650</li>
+    <li>5 Seater – ₹999</li>
+  </ul>
     </div>
     <div class="service-card">
       <img src="images/watertank.jpg" alt="WaterTank Cleaning">
       <h3>Water Tank Cleaning</h3>
       <p>Complete water tank wash to remove sludge, algae & bacteria for safe and hygienic water.</p>
+     <span class="starting-price">Starting from ₹250</span>
+  <!-- MOBILE BUTTON -->
+  <button class="price-toggle" onclick="togglePrice(this)">
+    View Prices
+  </button>
+
+  <!-- PRICE LIST -->
+  <ul class="price-list">
+    <li class="best">⭐ Single Seat – ₹250</li>
+    <li>2 Seater – ₹450</li>
+    <li>3 Seater – ₹650</li>
+    <li>5 Seater – ₹999</li>
+  </ul>
     </div>
   </div>
 </section>
@@ -399,7 +650,7 @@
 </section>
 
 <footer>
-  © 2026 SUKHVEER HOME & OFFICE CARE SERVICES  
+  © 2026 FreshNest Cleaning Services  
   <div class="social-icons">
     <a href="https://www.instagram.com/sukhveerhomecare" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -465,8 +716,52 @@ function displayLocalComments() {
 
 window.onload = displayLocalComments;
 </script>
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+  toggleBtn.textContent = "☀️";
+}
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+    toggleBtn.textContent = "☀️";
+  } else {
+    localStorage.setItem("theme", "light");
+    toggleBtn.textContent = "🌙";
+  }
+});
+</script>
+<script>
+function togglePrice(btn) {
+  const allLists = document.querySelectorAll(".price-list");
+  const allButtons = document.querySelectorAll(".price-toggle");
+
+  // Close all others
+  allLists.forEach(list => {
+    if (list !== btn.nextElementSibling) {
+      list.classList.remove("show");
+    }
+  });
+
+  allButtons.forEach(b => {
+    if (b !== btn) b.textContent = "View Prices";
+  });
+
+  // Toggle current
+  const priceList = btn.nextElementSibling;
+  priceList.classList.toggle("show");
+
+  btn.textContent = priceList.classList.contains("show")
+    ? "Hide Prices"
+    : "View Prices";
+}
+</script>
 
 </body>
 </html>
-
-
