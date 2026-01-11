@@ -1,261 +1,262 @@
-  <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FreshNest Cleaning Services</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <style>
+    <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
       }
 
       body {
         background: #f9f9f9;
         color: #333;
       }
-/* COMMENTS SECTION */
-#comments-section {
-  max-width: 700px;
-  margin: 60px auto;
-  padding: 25px;
-}
-/* REVIEWS GRID */
-#comments-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Laptop */
-  gap: 20px;
-  align-items: stretch; /* IMPORTANT */
-}
+      /* COMMENTS SECTION */
+      #comments-section {
+        max-width: 700px;
+        margin: 60px auto;
+        padding: 25px;
+      }
+      /* REVIEWS GRID */
+      #comments-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Laptop */
+        gap: 20px;
+        align-items: stretch; /* IMPORTANT */
+      }
 
+      /* TABLET (optional – still 2) */
+      @media (max-width: 1024px) {
+        #comments-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
-/* TABLET (optional – still 2) */
-@media (max-width: 1024px) {
-  #comments-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+      /* MOBILE – FORCE 2 COLUMNS */
+      @media (max-width: 1024px) {
+        #comments-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
-/* MOBILE – FORCE 2 COLUMNS */
-@media (max-width: 1024px) {
-  #comments-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+      @media (max-width: 600px) {
+        .review-card {
+          height: 210px;
+          padding: 14px;
+        }
 
-@media (max-width: 600px) {
-  .review-card {
-    height: 210px;
-    padding: 14px;
-  }
+        .review-text {
+          font-size: 13px;
+        }
+      }
 
-  .review-text {
-    font-size: 13px;
-  }
-}
+      .review-title {
+        text-align: center;
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+        color: #1e90ff;
+      }
 
+      /* REVIEW CARD */
+      .review-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 230px; /* SAME HEIGHT FOR ALL */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
 
-.review-title {
-  text-align: center;
-  font-size: 1.9rem;
-  margin-bottom: 30px;
-  color: #1e90ff;
-}
+      .review-card:hover {
+        transform: translateY(-4px);
+      }
 
-/* REVIEW CARD */
-.review-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 230px; /* SAME HEIGHT FOR ALL */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+      .review-text {
+        font-size: 14px;
+        color: #333;
+        margin: 10px 0;
 
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
 
-.review-card:hover {
-  transform: translateY(-4px);
-}
+      .review-stars {
+        font-size: 18px;
+      }
 
+      .reviewer-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: #555;
+      }
 
-.review-text {
-  font-size: 14px;
-  color: #333;
-  margin: 10px 0;
+      /* FORM */
+      .review-form {
+        margin-top: 35px;
+        background: #f5f9ff;
+        padding: 20px;
+        border-radius: 18px;
+      }
 
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+      .review-form input,
+      .review-form textarea {
+        width: 100%;
+        border: none;
+        padding: 12px 14px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
 
-.review-stars {
-  font-size: 18px;
-}
+      .review-form textarea {
+        resize: none;
+        min-height: 90px;
+      }
 
-.reviewer-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #555;
-}
+      .review-form button {
+        background: #1e90ff;
+        color: #fff;
+        border-radius: 30px;
+        padding: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.3s;
+      }
 
-/* FORM */
-.review-form {
-  margin-top: 35px;
-  background: #f5f9ff;
-  padding: 20px;
-  border-radius: 18px;
-}
+      .review-form button:hover {
+        background: #000;
+      }
 
-.review-form input,
-.review-form textarea {
-  width: 100%;
-  border: none;
-  padding: 12px 14px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  font-size: 14px;
-}
+      /* STAR RATING */
+      #starRating {
+        margin: 10px 0;
+      }
 
-.review-form textarea {
-  resize: none;
-  min-height: 90px;
-}
+      #starRating span {
+        font-size: 26px;
+        cursor: pointer;
+        opacity: 0.35;
+        transition: 0.2s;
+      }
 
-.review-form button {
-  background: #1e90ff;
-  color: #fff;
-  border-radius: 30px;
-  padding: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  width: 100%;
-  cursor: pointer;
-  transition: 0.3s;
-}
+      #starRating span.active {
+        opacity: 1;
+      }
 
-.review-form button:hover {
-  background: #000;
-}
+      /* DARK MODE SUPPORT */
+      body.dark .review-card {
+        background: #1e1e1e;
+        color: #eee;
+      }
 
-/* STAR RATING */
-#starRating {
-  margin: 10px 0;
-}
+      body.dark .review-text {
+        color: #ddd;
+      }
 
-#starRating span {
-  font-size: 26px;
-  cursor: pointer;
-  opacity: 0.35;
-  transition: 0.2s;
-}
+      body.dark .reviewer-name {
+        color: #aaa;
+      }
 
-#starRating span.active {
-  opacity: 1;
-}
+      body.dark .review-form {
+        background: #1e1e1e;
+      }
 
-/* DARK MODE SUPPORT */
-body.dark .review-card {
-  background: #1e1e1e;
-  color: #eee;
-}
-
-body.dark .review-text {
-  color: #ddd;
-}
-
-body.dark .reviewer-name {
-  color: #aaa;
-}
-
-
-body.dark .review-form {
-  background: #1e1e1e;
-}
-
-body.dark .review-form input,
-body.dark .review-form textarea {
-  background: #2a2a2a;
-  color: #fff;
-}
-/* =========================
+      body.dark .review-form input,
+      body.dark .review-form textarea {
+        background: #2a2a2a;
+        color: #fff;
+      }
+      /* =========================
    COMMENTS – DARK MODE
    ========================= */
 
-body.dark #comments-section {
-  background: transparent;
-}
+      body.dark #comments-section {
+        background: transparent;
+      }
 
-/* REVIEW CARD */
-body.dark .review-card {
-  background: #1e1e1e;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-}
+      /* REVIEW CARD */
+      body.dark .review-card {
+        background: #1e1e1e;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      }
 
-body.dark .review-stars {
-  color: #ffcc00;
-}
+      body.dark .review-stars {
+        color: #ffcc00;
+      }
 
-body.dark .review-text {
-  color: #e0e0e0;
-}
+      body.dark .review-text {
+        color: #e0e0e0;
+      }
 
-body.dark .reviewer-name {
-  color: #a0a0a0;
-}
+      body.dark .reviewer-name {
+        color: #a0a0a0;
+      }
 
-/* REVIEW FORM */
-body.dark .review-form {
-  background: #181818;
-  box-shadow: inset 0 0 0 1px #2a2a2a;
-}
+      /* REVIEW FORM */
+      body.dark .review-form {
+        background: #181818;
+        box-shadow: inset 0 0 0 1px #2a2a2a;
+      }
 
-body.dark .review-form input,
-body.dark .review-form textarea {
-  background: #2a2a2a;
-  color: #ffffff;
-}
+      body.dark .review-form input,
+      body.dark .review-form textarea {
+        background: #2a2a2a;
+        color: #ffffff;
+      }
 
-body.dark .review-form input::placeholder,
-body.dark .review-form textarea::placeholder {
-  color: #aaa;
-}
+      body.dark .review-form input::placeholder,
+      body.dark .review-form textarea::placeholder {
+        color: #aaa;
+      }
 
-/* BUTTON */
-body.dark .review-form button {
-  background: linear-gradient(135deg, #1e90ff, #00bcd4);
-  color: #fff;
-}
+      /* BUTTON */
+      body.dark .review-form button {
+        background: linear-gradient(135deg, #1e90ff, #00bcd4);
+        color: #fff;
+      }
 
-body.dark .review-form button:hover {
-  background: #000;
-}
+      body.dark .review-form button:hover {
+        background: #000;
+      }
 
-/* STAR RATING */
-body.dark #starRating span {
-  color: #ffcc00;
-  opacity: 0.4;
-}
+      /* STAR RATING */
+      body.dark #starRating span {
+        color: #ffcc00;
+        opacity: 0.4;
+      }
 
-body.dark #starRating span.active {
-  opacity: 1;
-}
+      body.dark #starRating span.active {
+        opacity: 1;
+      }
 
-/* SECTION TITLE */
-body.dark .review-title {
-  color: #1e90ff;
-}
-.review-card + .review-card {
-  margin-top: 18px;
-}
+      /* SECTION TITLE */
+      body.dark .review-title {
+        color: #1e90ff;
+      }
+      .review-card + .review-card {
+        margin-top: 18px;
+      }
 
       /* HERO */
       header {
@@ -318,7 +319,7 @@ body.dark .review-title {
         background: #fff;
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         text-align: center;
         transition: transform 0.3s;
       }
@@ -352,7 +353,7 @@ body.dark .review-title {
         padding: 25px;
         border-radius: 15px;
         text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
       }
 
       /* CONTACT */
@@ -369,7 +370,8 @@ body.dark .review-title {
         margin-top: 20px;
       }
 
-      input, textarea {
+      input,
+      textarea {
         padding: 12px;
         border-radius: 10px;
         border: none;
@@ -417,594 +419,640 @@ body.dark .review-title {
         text-align: center;
         font-size: 28px;
         line-height: 55px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         z-index: 1000;
       }
-  /* Reviews container */
-  .review-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
+      /* Reviews container */
+      .review-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
 
-  .review-stars {
-    margin-bottom: 8px;
-  }
+      .review-stars {
+        margin-bottom: 8px;
+      }
 
-  .review-stars span {
-    font-size: 20px;
-  }
+      .review-stars span {
+        font-size: 20px;
+      }
 
-  .review-text {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 8px;
-  }
+      .review-text {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 8px;
+      }
 
-  .reviewer-name {
-    font-size: 0.85rem;
-    color: #555;
-    font-weight: 600;
-  }
+      .reviewer-name {
+        font-size: 0.85rem;
+        color: #555;
+        font-weight: 600;
+      }
 
-  /* Dark Mode */
-  body.dark .review-card {
-    background: #1e1e1e;
-    color: #eaeaea;
-  }
+      /* Dark Mode */
+      body.dark .review-card {
+        background: #1e1e1e;
+        color: #eaeaea;
+      }
 
-  body.dark .review-text { color: #e0e0e0; }
-  body.dark .reviewer-name { color: #aaa; }
+      body.dark .review-text {
+        color: #e0e0e0;
+      }
+      body.dark .reviewer-name {
+        color: #aaa;
+      }
 
-  /* THEME TOGGLE BUTTON */
-  .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
+      /* THEME TOGGLE BUTTON */
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
 
-    /* CENTER ICON */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        /* CENTER ICON */
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 2000;
-  }
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 2000;
+      }
 
+      /* DARK MODE */
+      body.dark {
+        background: #121212;
+        color: #eaeaea;
+      }
 
-  /* DARK MODE */
-  body.dark {
-    background: #121212;
-    color: #eaeaea;
-  }
+      body.dark header {
+        background: linear-gradient(135deg, #000, #333);
+      }
 
-  body.dark header {
-    background: linear-gradient(135deg, #000, #333);
-  }
+      body.dark section {
+        background: transparent;
+      }
 
-  body.dark section {
-    background: transparent;
-  }
+      body.dark .service-card,
+      body.dark .why-box,
+      body.dark .review-card {
+        background: #1e1e1e;
+        color: #eaeaea;
+      }
 
-  body.dark .service-card,
-  body.dark .why-box,
-  body.dark .review-card {
-    background: #1e1e1e;
-    color: #eaeaea;
-  }
+      body.dark .contact {
+        background: #1e1e1e;
+      }
 
-  body.dark .contact {
-    background: #1e1e1e;
-  }
+      body.dark footer {
+        background: #000;
+      }
 
-  body.dark footer {
-    background: #000;
-  }
+      body.dark .btn {
+        background: #1e90ff;
+        color: #fff;
+      }
 
-  body.dark .btn {
-    background: #1e90ff;
-    color: #fff;
-  }
+      body.dark input,
+      body.dark textarea {
+        background: #2a2a2a;
+        color: #fff;
+      }
 
-  body.dark input,
-  body.dark textarea {
-    background: #2a2a2a;
-    color: #fff;
-  }
+      body.dark .comment-box {
+        background: #1e1e1e;
+      }
+      /* PRICE BADGE */
+      .starting-price {
+        display: inline-block;
+        background: #e6f4ff;
+        color: #1e90ff;
+        font-size: 13px;
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
 
-  body.dark .comment-box {
-    background: #1e1e1e;
-  }
-  /* PRICE BADGE */
-  .starting-price {
-    display: inline-block;
-    background: #e6f4ff;
-    color: #1e90ff;
-    font-size: 13px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
+      /* PRICE LIST */
+      .price-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+        background: #f5f9ff;
+        border-radius: 12px;
 
-  /* PRICE LIST */
-  .price-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-    background: #f5f9ff;
-    border-radius: 12px;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
 
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-  }
+      .price-list li {
+        padding: 8px 12px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+      }
 
-  .price-list li {
-    padding: 8px 12px;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
-  }
+      /* CHEAPEST HIGHLIGHT */
+      .price-list li.best {
+        background: #1e90ff;
+        color: #fff;
+        font-weight: 600;
+      }
 
-  /* CHEAPEST HIGHLIGHT */
-  .price-list li.best {
-    background: #1e90ff;
-    color: #fff;
-    font-weight: 600;
-  }
+      /* DESKTOP HOVER */
+      @media (hover: hover) {
+        .service-card:hover .price-list {
+          opacity: 1;
+          max-height: 300px;
+        }
+      }
 
-  /* DESKTOP HOVER */
-  @media (hover: hover) {
-    .service-card:hover .price-list {
-      opacity: 1;
-      max-height: 300px;
-    }
-  }
+      /* MOBILE BUTTON */
+      .price-toggle {
+        display: none;
+        margin-top: 10px;
+        padding: 8px 18px;
+        background: #1e90ff;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        font-size: 14px;
+        cursor: pointer;
+      }
 
-  /* MOBILE BUTTON */
-  .price-toggle {
-    display: none;
-    margin-top: 10px;
-    padding: 8px 18px;
-    background: #1e90ff;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-  }
+      /* SHOW BUTTON ON MOBILE */
+      @media (max-width: 768px) {
+        .price-toggle {
+          display: inline-block;
+        }
+      }
 
-  /* SHOW BUTTON ON MOBILE */
-  @media (max-width: 768px) {
-    .price-toggle {
-      display: inline-block;
-    }
-  }
+      /* ACTIVE STATE */
+      .price-list.show {
+        opacity: 1;
+        max-height: 300px;
+      }
+      /* DARK MODE – PRICE TEXT */
+      body.dark .price-list li {
+        color: #fff;
+      }
 
-  /* ACTIVE STATE */
-  .price-list.show {
-    opacity: 1;
-    max-height: 300px;
-  }
-  /* DARK MODE – PRICE TEXT */
-  body.dark .price-list li {
-    color: #fff;
-  }
+      body.dark .price-list {
+        background: #1e1e1e;
+      }
 
-  body.dark .price-list {
-    background: #1e1e1e;
-  }
+      /* MOBILE POPUP DARK MODE */
+      body.dark .popup-content {
+        background: #1e1e1e;
+        color: #fff;
+      }
 
-  /* MOBILE POPUP DARK MODE */
-  body.dark .popup-content {
-    background: #1e1e1e;
-    color: #fff;
-  }
+      body.dark .popup-content li {
+        color: #fff;
+        border-bottom: 1px solid #333;
+      }
 
-  body.dark .popup-content li {
-    color: #fff;
-    border-bottom: 1px solid #333;
-  }
+      body.dark .popup-content li:first-child {
+        background: #1e90ff;
+        color: #fff;
+      }
 
-  body.dark .popup-content li:first-child {
-    background: #1e90ff;
-    color: #fff;
-  }
+      body.dark .close-popup {
+        color: #fff;
+      }
+      body.dark .price-list {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      }
+      #starRating span {
+        font-size: 26px;
+        cursor: pointer;
+        opacity: 0.4;
+      }
 
-  body.dark .close-popup {
-    color: #fff;
-  }
-  body.dark .price-list {
-    box-shadow: 0 0 15px rgba(255,255,255,0.05);
-  }
-#starRating span {
-  font-size: 26px;
-  cursor: pointer;
-  opacity: 0.4;
-}
-
-#starRating span.active {
-  opacity: 1;
-}
-
+      #starRating span.active {
+        opacity: 1;
+      }
 
       @media (max-width: 768px) {
         header h1 {
           font-size: 2rem;
         }
       }
-    </style><style>
-  #comments-section { max-width: 500px; margin: 20px auto; }
-  #comments-list div { padding: 8px; border-bottom: 1px solid #ccc; }
-  input, textarea { width: 100%; margin: 5px 0; padding: 8px; }
-  button { padding: 8px 16px; margin-top: 5px; }
-  </style>
+    </style>
+    <style>
+      #comments-section {
+        max-width: 500px;
+        margin: 20px auto;
+      }
+      #comments-list div {
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+      }
+      input,
+      textarea {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+      }
+      button {
+        padding: 8px 16px;
+        margin-top: 5px;
+      }
+    </style>
   </head>
 
   <body>
-
-  <header>
-    <h1>SUKHVEER HOME & OFFICE CARE SERVICES</h1>
-    <H3>JALANDHAR</H3>
-    <p>Sofa • Table • Carpet • Mattress Deep Cleaning • AC Wet Wash • Water Tank Cleaning</p>
-    <a href="#contact" class="btn">Book Now</a>
-  </header>
-  <button id="themeToggle" class="theme-toggle">
-    🌙
-  </button>
-  <section>
-    <div class="section-title">
-      <h2>Our Services</h2>
-    </div>
-
-    <div class="services">
-      <div class="service-card">
-        <img src="images/sofa.jpg" alt="Sofa Cleaning">
-        <h3>Sofa Cleaning</h3>
-        <p>Deep cleaning to remove stains, dust & bad odor.</p>
-        <span class="starting-price">Starting from ₹250</span>
-    <!-- MOBILE BUTTON -->
-    <button class="price-toggle" onclick="togglePrice(this)">
-      View Prices
-    </button>
-
-    <!-- PRICE LIST -->
-    <ul class="price-list">
-      <li class="best">⭐ Single Seat – ₹250</li>
-      <li>2 Seater – ₹450</li>
-      <li>3 Seater – ₹650</li>
-      <li>5 Seater – ₹999</li>
-    </ul>
+    <header>
+      <h1>SUKHVEER HOME & OFFICE CARE SERVICES</h1>
+      <h3>JALANDHAR</h3>
+      <p>
+        Sofa • Table • Carpet • Mattress Deep Cleaning • AC Wet Wash • Water
+        Tank Cleaning
+      </p>
+      <a href="#contact" class="btn">Book Now</a>
+    </header>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+    <section>
+      <div class="section-title">
+        <h2>Our Services</h2>
       </div>
 
-      <div class="service-card">
-        <img src="images/table.jpg" alt="Table Cleaning">
-        <h3>Table & Chair Cleaning</h3>
-        <p>Restore shine and hygiene to your furniture.</p>
-        <span class="starting-price">Starting from ₹250</span>
-    <!-- MOBILE BUTTON -->
-    <button class="price-toggle" onclick="togglePrice(this)">
-      View Prices
-    </button>
+      <div class="services">
+        <div class="service-card">
+          <img src="images/sofa.jpg" alt="Sofa Cleaning" />
+          <h3>Sofa Cleaning</h3>
+          <p>Deep cleaning to remove stains, dust & bad odor.</p>
+          <span class="starting-price">Starting from ₹250</span>
+          <!-- MOBILE BUTTON -->
+          <button class="price-toggle" onclick="togglePrice(this)">
+            View Prices
+          </button>
 
-    <!-- PRICE LIST -->
-    <ul class="price-list">
-      <li class="best">⭐ Single Seat – ₹250</li>
-      <li>2 Seater – ₹450</li>
-      <li>3 Seater – ₹650</li>
-      <li>5 Seater – ₹999</li>
-    </ul>
+          <!-- PRICE LIST -->
+          <ul class="price-list">
+            <li class="best">⭐ Single Seat – ₹250</li>
+            <li>2 Seater – ₹450</li>
+            <li>3 Seater – ₹650</li>
+            <li>5 Seater – ₹999</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <img src="images/table.jpg" alt="Table Cleaning" />
+          <h3>Table & Chair Cleaning</h3>
+          <p>Restore shine and hygiene to your furniture.</p>
+          <span class="starting-price">Starting from ₹350</span>
+          <!-- MOBILE BUTTON -->
+          <button class="price-toggle" onclick="togglePrice(this)">
+            View Prices
+          </button>
+
+          <!-- PRICE LIST -->
+          <ul class="price-list">
+  <li class="best">⭐ Single Table – ₹350</li>
+  <li>2 Tables – ₹550</li>
+  <li>3 Tables – ₹800</li>
+  <li>Full Set (Table + 4 Chairs) – ₹1,000</li>
+</ul>
+        </div>
+
+        <div class="service-card">
+          <img src="images/carpet.jpg" alt="Carpet Cleaning" />
+          <h3>Carpet Cleaning</h3>
+          <p>Removes dirt, bacteria & allergens effectively.</p>
+          <span class="starting-price">Starting from ₹550</span>
+          <!-- MOBILE BUTTON -->
+          <button class="price-toggle" onclick="togglePrice(this)">
+            View Prices
+          </button>
+
+          <!-- PRICE LIST -->
+          <ul class="price-list">
+            <li class="best">⭐ Small Carpet – ₹500</li>
+            <li>Medium Carpet – ₹750</li>
+            <li>Large Carpet – ₹950</li>
+            <li>Extra Large Carpet – ₹1,200</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <img src="images/mattress.jpg" alt="Mattress Cleaning" />
+          <h3>Mattress Cleaning</h3>
+          <p>Eliminates dust mites for healthy sleep.</p>
+          <span class="starting-price">Starting from ₹250</span>
+          <!-- MOBILE BUTTON -->
+          <button class="price-toggle" onclick="togglePrice(this)">
+            View Prices
+          </button>
+
+          <!-- PRICE LIST -->
+          <ul class="price-list">
+  <li class="best">⭐ Single Mattress – ₹300</li>
+  <li>Double Mattress – ₹550</li>
+  <li>Queen Mattress – ₹800</li>
+  <li>King Mattress – ₹1,000</li>
+</ul>
+        </div>
+        <div class="service-card">
+          <img src="images/ac.jpg" alt="AC Cleaning" />
+          <h3>AC Cleaning</h3>
+          <p>
+            Deep wet wash cleaning for AC units to remove dust, bacteria &
+            improve cooling efficiency.
+          </p>
+          <span class="starting-price">Starting from ₹500</span>
+
+          <!-- MOBILE BUTTON -->
+          <button class="price-toggle" onclick="togglePrice(this)">
+            View Prices
+          </button>
+
+          <!-- PRICE LIST -->
+          <ul class="price-list">
+  <li class="best">⭐ Window AC – ₹500</li>
+  <li>Split AC 1 Ton – ₹650</li>
+  <li>Split AC 1.5 Ton – ₹800</li>
+  <li>Split AC 2 Ton – ₹1000</li>
+</ul>
+        </div>
+        <div class="service-card">
+          <img src="images/watertank.jpg" alt="WaterTank Cleaning" />
+          <h3>Water Tank Cleaning</h3>
+          <p>
+            Complete water tank wash to remove sludge, algae & bacteria for safe
+            and hygienic water.
+          </p>
+          <span class="starting-price">Starting from ₹2,500</span>
+          <!-- MOBILE BUTTON -->
+          <button class="price-toggle" onclick="togglePrice(this)">
+            View Prices
+          </button>
+
+          <!-- PRICE LIST -->
+          <ul class="price-list">
+            <li class="best">⭐ Single Seat – ₹350</li>
+            <li>Small Tank (Up to 500 liters) – 350 ⭐ (starting price)</li>
+            <li>Medium Tank (500–1000 liters) – ₹450</li>
+            <li>Large Tank (1000–2000 liters) – ₹650</li>
+            <li>Extra Large Tank (2000+ liters) – ₹999</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div id="comments-section">
+      <h2>Comments</h2>
+      <div id="comments-list"></div>
+
+      <input type="text" id="commentName" placeholder="Your Name" />
+      <textarea id="commentText" placeholder="Write your comment"></textarea>
+
+      <div id="starRating">
+        <span data-value="1">⭐</span>
+        <span data-value="2">⭐</span>
+        <span data-value="3">⭐</span>
+        <span data-value="4">⭐</span>
+        <span data-value="5">⭐</span>
       </div>
 
-      <div class="service-card">
-        <img src="images/carpet.jpg" alt="Carpet Cleaning">
-        <h3>Carpet Cleaning</h3>
-        <p>Removes dirt, bacteria & allergens effectively.</p>
-        <span class="starting-price">Starting from ₹250</span>
-    <!-- MOBILE BUTTON -->
-    <button class="price-toggle" onclick="togglePrice(this)">
-      View Prices
-    </button>
+      <button type="button" onclick="postComment()">Post Comment</button>
+    </div>
 
-    <!-- PRICE LIST -->
-    <ul class="price-list">
-      <li class="best">⭐ Single Seat – ₹250</li>
-      <li>2 Seater – ₹450</li>
-      <li>3 Seater – ₹650</li>
-      <li>5 Seater – ₹999</li>
-    </ul>
+    <div id="comments-section">
+      <div id="comments-list"></div>
+
+      <button id="showMoreBtn" onclick="toggleReviews()" style="display: none">
+        Show More Reviews
+      </button>
+
+      <!-- review form stays same -->
+    </div>
+
+    <section>
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
       </div>
 
-      <div class="service-card">
-        <img src="images/mattress.jpg" alt="Mattress Cleaning">
-        <h3>Mattress Cleaning</h3>
-        <p>Eliminates dust mites for healthy sleep.</p>
-      <span class="starting-price">Starting from ₹250</span>
-    <!-- MOBILE BUTTON -->
-    <button class="price-toggle" onclick="togglePrice(this)">
-      View Prices
-    </button>
-
-    <!-- PRICE LIST -->
-    <ul class="price-list">
-      <li class="best">⭐ Single Seat – ₹250</li>
-      <li>2 Seater – ₹450</li>
-      <li>3 Seater – ₹650</li>
-      <li>5 Seater – ₹999</li>
-    </ul>
+      <div class="why-us">
+        <div class="why-box">✔ Trained Professionals</div>
+        <div class="why-box">✔ Eco-Friendly Products</div>
+        <div class="why-box">✔ Affordable Pricing</div>
+        <div class="why-box">✔ On-Time Service</div>
       </div>
-      <div class="service-card">
-        <img src="images/ac.jpg" alt="AC Cleaning">
-        <h3>AC Cleaning</h3>
-        <p>Deep wet wash cleaning for AC units to remove dust, bacteria & improve cooling efficiency.</p>
-        <span class="starting-price">Starting from ₹250</span>
+    </section>
 
-    <!-- MOBILE BUTTON -->
-    <button class="price-toggle" onclick="togglePrice(this)">
-      View Prices
-    </button>
-
-    <!-- PRICE LIST -->
-    <ul class="price-list">
-      <li class="best">⭐ Single Seat – ₹250</li>
-      <li>2 Seater – ₹450</li>
-      <li>3 Seater – ₹650</li>
-      <li>5 Seater – ₹999</li>
-    </ul>
+    <section>
+      <div class="section-title">
+        <h2>How It Works</h2>
       </div>
-      <div class="service-card">
-        <img src="images/watertank.jpg" alt="WaterTank Cleaning">
-        <h3>Water Tank Cleaning</h3>
-        <p>Complete water tank wash to remove sludge, algae & bacteria for safe and hygienic water.</p>
-      <span class="starting-price">Starting from ₹250</span>
-    <!-- MOBILE BUTTON -->
-    <button class="price-toggle" onclick="togglePrice(this)">
-      View Prices
-    </button>
 
-    <!-- PRICE LIST -->
-    <ul class="price-list">
-      <li class="best">⭐ Single Seat – ₹250</li>
-      <li>2 Seater – ₹450</li>
-      <li>3 Seater – ₹650</li>
-      <li>5 Seater – ₹999</li>
-    </ul>
+      <div class="steps">
+        <div class="step">1️⃣ Book Your Service</div>
+        <div class="step">2️⃣ We Deep Clean</div>
+        <div class="step">3️⃣ Enjoy a Fresh Home</div>
       </div>
-    </div>
-  </section>
-<div id="comments-section">
- <h2 class="review-title">Customer Reviews</h2>
-  <div id="comments-list"></div>
+    </section>
 
+    <footer>
+      © 2026 FreshNest Cleaning Services
+      <div class="social-icons">
+        <a href="https://www.instagram.com/sukhveerhomecare" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.youtube.com/@yourchannel" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://wa.me/919878766926" target="_blank"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+      </div>
+    </footer>
+    <a href="https://wa.me/919878766926" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <script>
+      const toggleBtn = document.getElementById("themeToggle");
 
-  <!-- STAR RATING -->
-  <div id="starRating">
-    <span onclick="setRating(1)">⭐</span>
-    <span onclick="setRating(2)">⭐</span>
-    <span onclick="setRating(3)">⭐</span>
-    <span onclick="setRating(4)">⭐</span>
-    <span onclick="setRating(5)">⭐</span>
-  </div>
-
-  <input type="text" id="commentName" placeholder="Your Name" />
-  <textarea id="commentText" placeholder="Write your review"></textarea>
-
-  <button type="button" onclick="postComment()">Post Review</button>
-</div>
-
-
-<div id="comments-section">
-  
-
-  <div id="comments-list"></div>
-
-  <button id="showMoreBtn" onclick="toggleReviews()" style="display:none;">
-    Show More Reviews
-  </button>
-
-  <!-- review form stays same -->
-</div>
-
-
-  <section>
-    <div class="section-title">
-      <h2>Why Choose Us</h2>
-    </div>
-
-    <div class="why-us">
-      <div class="why-box">✔ Trained Professionals</div>
-      <div class="why-box">✔ Eco-Friendly Products</div>
-      <div class="why-box">✔ Affordable Pricing</div>
-      <div class="why-box">✔ On-Time Service</div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">
-      <h2>How It Works</h2>
-    </div>
-
-    <div class="steps">
-      <div class="step">1️⃣ Book Your Service</div>
-      <div class="step">2️⃣ We Deep Clean</div>
-      <div class="step">3️⃣ Enjoy a Fresh Home</div>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 FreshNest Cleaning Services  
-    <div class="social-icons">
-      <a href="https://www.instagram.com/sukhveerhomecare" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://wa.me/919878766926" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </footer>
-  <a href="https://wa.me/919878766926" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <script>
-  const toggleBtn = document.getElementById("themeToggle");
-
-  // Load saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-    toggleBtn.textContent = "☀️";
-  }
-
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-      toggleBtn.textContent = "☀️";
-    } else {
-      localStorage.setItem("theme", "light");
-      toggleBtn.textContent = "🌙";
-    }
-  });
-  </script>
-  <script>
-  function togglePrice(btn) {
-    const allLists = document.querySelectorAll(".price-list");
-    const allButtons = document.querySelectorAll(".price-toggle");
-
-    // Close all others
-    allLists.forEach(list => {
-      if (list !== btn.nextElementSibling) {
-        list.classList.remove("show");
+      // Load saved theme
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        toggleBtn.textContent = "☀️";
       }
-    });
 
-    allButtons.forEach(b => {
-      if (b !== btn) b.textContent = "View Prices";
-    });
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
 
-    // Toggle current
-    const priceList = btn.nextElementSibling;
-    priceList.classList.toggle("show");
+        if (document.body.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+          toggleBtn.textContent = "☀️";
+        } else {
+          localStorage.setItem("theme", "light");
+          toggleBtn.textContent = "🌙";
+        }
+      });
+    </script>
+    <script>
+      function togglePrice(btn) {
+        const allLists = document.querySelectorAll(".price-list");
+        const allButtons = document.querySelectorAll(".price-toggle");
 
-    btn.textContent = priceList.classList.contains("show")
-      ? "Hide Prices"
-      : "View Prices";
-  }
-  </script>
+        // Close all others
+        allLists.forEach((list) => {
+          if (list !== btn.nextElementSibling) {
+            list.classList.remove("show");
+          }
+        });
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp,
-  query,
-  orderBy,
-  onSnapshot
-} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+        allButtons.forEach((b) => {
+          if (b !== btn) b.textContent = "View Prices";
+        });
 
-/* FIREBASE CONFIG */
-const firebaseConfig = {
-  apiKey: "AIzaSyBJwCahGyDuHdHLjT_xG6XPdFChfEsJza4",
-  authDomain: "sukhveer-reviews.firebaseapp.com",
-  projectId: "sukhveer-reviews",
-  storageBucket: "sukhveer-reviews.appspot.com",
-  messagingSenderId: "284333381338",
-  appId: "1:284333381338:web:5a363b583f2cb33d52f7e3"
-};
+        // Toggle current
+        const priceList = btn.nextElementSibling;
+        priceList.classList.toggle("show");
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+        btn.textContent = priceList.classList.contains("show")
+          ? "Hide Prices"
+          : "View Prices";
+      }
+    </script>
 
-/* ELEMENTS */
-const commentsList = document.getElementById("comments-list");
-const showMoreBtn = document.getElementById("showMoreBtn");
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        serverTimestamp,
+        query,
+        orderBy,
+        onSnapshot,
+      } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-/* FIRESTORE */
-const commentsCol = collection(db, "comments");
-const q = query(commentsCol, orderBy("timestamp", "desc"));
+      /* FIREBASE CONFIG */
+      const firebaseConfig = {
+        apiKey: "AIzaSyBJwCahGyDuHdHLjT_xG6XPdFChfEsJza4",
+        authDomain: "sukhveer-reviews.firebaseapp.com",
+        projectId: "sukhveer-reviews",
+        storageBucket: "sukhveer-reviews.appspot.com",
+        messagingSenderId: "284333381338",
+        appId: "1:284333381338:web:5a363b583f2cb33d52f7e3",
+      };
 
-/* SHOW MORE LOGIC */
-let allReviews = [];
-let showAll = false;
-const SHOW_LIMIT = 5;
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
 
-function renderReviews() {
-  commentsList.innerHTML = "";
+      /* STAR RATING LOGIC */
+      let selectedRating = 5; // default
+      const starElements = document.querySelectorAll("#starRating span");
 
-  const reviewsToShow = showAll
-    ? allReviews
-    : allReviews.slice(0, SHOW_LIMIT);
+      starElements.forEach((star, index) => {
+        star.addEventListener("click", () => {
+          selectedRating = index + 1;
+          starElements.forEach((s, i) => {
+            if (i < selectedRating) s.classList.add("active");
+            else s.classList.remove("active");
+          });
+        });
+      });
 
-  reviewsToShow.forEach(data => {
-    const stars = "⭐".repeat(data.rating || 5);
+      /* ELEMENTS */
+      const commentsList = document.getElementById("comments-list");
+      const showMoreBtn = document.getElementById("showMoreBtn");
 
-    const div = document.createElement("div");
-    div.className = "review-card";
-    div.innerHTML = `
+      /* FIRESTORE */
+      const commentsCol = collection(db, "comments");
+      const q = query(commentsCol, orderBy("timestamp", "desc"));
+
+      /* SHOW MORE LOGIC */
+      let allReviews = [];
+      let showAll = false;
+      const SHOW_LIMIT = 5;
+
+      function renderReviews() {
+        commentsList.innerHTML = "";
+
+        const reviewsToShow = showAll
+          ? allReviews
+          : allReviews.slice(0, SHOW_LIMIT);
+
+        reviewsToShow.forEach((data) => {
+          const stars = "⭐".repeat(data.rating || 5);
+
+          const div = document.createElement("div");
+          div.className = "review-card";
+          div.innerHTML = `
       <div class="review-stars">${stars}</div>
       <div class="review-text">${data.comment}</div>
       <div class="reviewer-name">- ${data.name}</div>
     `;
-    commentsList.appendChild(div);
-  });
+          commentsList.appendChild(div);
+        });
 
-  if (allReviews.length > SHOW_LIMIT) {
-    showMoreBtn.style.display = "block";
-    showMoreBtn.textContent = showAll
-      ? "Show Less Reviews"
-      : "Show More Reviews";
-  } else {
-    showMoreBtn.style.display = "none";
-  }
-}
+        if (allReviews.length > SHOW_LIMIT) {
+          showMoreBtn.style.display = "block";
+          showMoreBtn.textContent = showAll
+            ? "Show Less Reviews"
+            : "Show More Reviews";
+        } else {
+          showMoreBtn.style.display = "none";
+        }
+      }
 
-/* TOGGLE BUTTON */
-window.toggleReviews = function () {
-  showAll = !showAll;
-  renderReviews();
-};
+      /* TOGGLE SHOW MORE */
+      window.toggleReviews = function () {
+        showAll = !showAll;
+        renderReviews();
+      };
 
-/* REAL-TIME LISTENER */
-onSnapshot(q, snapshot => {
-  allReviews = [];
-  snapshot.forEach(doc => {
-    allReviews.push(doc.data());
-  });
-  renderReviews();
-});
+      /* REAL-TIME LISTENER */
+      onSnapshot(q, (snapshot) => {
+        allReviews = [];
+        snapshot.forEach((doc) => {
+          allReviews.push(doc.data());
+        });
+        renderReviews();
+      });
 
-/* POST COMMENT */
-window.postComment = async function () {
-  const name = document.getElementById("commentName").value.trim();
-  const comment = document.getElementById("commentText").value.trim();
+      /* POST COMMENT */
+      window.postComment = async function () {
+        const name = document.getElementById("commentName").value.trim();
+        const comment = document.getElementById("commentText").value.trim();
 
-  if (!name || !comment) {
-    alert("Please enter both name and comment.");
-    return;
-  }
+        if (!name || !comment) {
+          alert("Please enter both name and comment.");
+          return;
+        }
 
-  await addDoc(commentsCol, {
-    name,
-    comment,
-    rating: 5,
-    timestamp: serverTimestamp()
-  });
+        try {
+          await addDoc(commentsCol, {
+            name,
+            comment,
+            rating: selectedRating, // ✅ Save the selected star
+            timestamp: serverTimestamp(),
+          });
 
-  document.getElementById("commentName").value = "";
-  document.getElementById("commentText").value = "";
-};
-</script>
+          // Clear inputs
+          document.getElementById("commentName").value = "";
+          document.getElementById("commentText").value = "";
 
-
-
-
+          // Reset stars to 5
+          selectedRating = 5;
+          starElements.forEach((star) => star.classList.remove("active"));
+          for (let i = 0; i < selectedRating; i++) {
+            starElements[i].classList.add("active");
+          }
+        } catch (error) {
+          console.error("Error posting comment:", error);
+        }
+      };
+    </script>
   </body>
-  </html>
+</html>
