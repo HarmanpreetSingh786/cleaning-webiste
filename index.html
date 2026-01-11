@@ -1,767 +1,729 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FreshNest Cleaning Services</title>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshNest Cleaning Services</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      /* HERO */
+      header {
+        background: linear-gradient(135deg, #1e90ff, #00bcd4);
+        color: #fff;
+        text-align: center;
+        padding: 70px 20px;
+      }
+
+      header h1 {
+        font-size: 2.6rem;
+      }
+
+      header p {
+        margin: 15px 0;
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 32px;
+        background: #fff;
+        color: #1e90ff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #000;
+        color: #fff;
+      }
+
+      section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 60px 20px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+        color: #1e90ff;
+      }
+
+      /* SERVICES */
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .service-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 15px;
+      }
+
+      .service-card h3 {
+        color: #00bcd4;
+        margin-bottom: 10px;
+      }
+
+      /* WHY US */
+      .why-us {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .why-box {
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      }
+
+      /* CONTACT */
+      .contact {
+        background: #1e90ff;
+        color: #fff;
+        padding: 40px;
+        border-radius: 20px;
+      }
+
+      form {
+        display: grid;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      input, textarea {
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+      }
+
+      button {
+        padding: 12px;
+        border-radius: 30px;
+        border: none;
+        background: #fff;
+        color: #1e90ff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 25px;
+      }
+
+      .social-icons {
+        margin-top: 10px;
+      }
+
+      .social-icons a {
+        color: #fff;
+        font-size: 22px;
+        margin: 0 10px;
+      }
+
+      /* WHATSAPP FLOAT */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: #fff;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 28px;
+        line-height: 55px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 1000;
+      }
+  /* Reviews container */
+  .review-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .review-stars {
+    margin-bottom: 8px;
+  }
+
+  .review-stars span {
+    font-size: 20px;
+  }
+
+  .review-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .reviewer-name {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 600;
+  }
+
+  /* Dark Mode */
+  body.dark .review-card {
+    background: #1e1e1e;
+    color: #eaeaea;
+  }
+
+  body.dark .review-text { color: #e0e0e0; }
+  body.dark .reviewer-name { color: #aaa; }
+
+  /* THEME TOGGLE BUTTON */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+
+    /* CENTER ICON */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+
+  /* DARK MODE */
+  body.dark {
+    background: #121212;
+    color: #eaeaea;
+  }
+
+  body.dark header {
+    background: linear-gradient(135deg, #000, #333);
+  }
+
+  body.dark section {
+    background: transparent;
+  }
+
+  body.dark .service-card,
+  body.dark .why-box,
+  body.dark .review-card {
+    background: #1e1e1e;
+    color: #eaeaea;
+  }
+
+  body.dark .contact {
+    background: #1e1e1e;
+  }
+
+  body.dark footer {
+    background: #000;
+  }
+
+  body.dark .btn {
+    background: #1e90ff;
+    color: #fff;
+  }
+
+  body.dark input,
+  body.dark textarea {
+    background: #2a2a2a;
+    color: #fff;
+  }
+
+  body.dark .comment-box {
+    background: #1e1e1e;
+  }
+  /* PRICE BADGE */
+  .starting-price {
+    display: inline-block;
+    background: #e6f4ff;
+    color: #1e90ff;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  /* PRICE LIST */
+  .price-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    background: #f5f9ff;
+    border-radius: 12px;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .price-list li {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* CHEAPEST HIGHLIGHT */
+  .price-list li.best {
+    background: #1e90ff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* DESKTOP HOVER */
+  @media (hover: hover) {
+    .service-card:hover .price-list {
+      opacity: 1;
+      max-height: 300px;
     }
+  }
 
-    body {
-      background: #f9f9f9;
-      color: #333;
-    }
+  /* MOBILE BUTTON */
+  .price-toggle {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 18px;
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
 
-    /* HERO */
-    header {
-      background: linear-gradient(135deg, #1e90ff, #00bcd4);
-      color: #fff;
-      text-align: center;
-      padding: 70px 20px;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-    }
-
-    header p {
-      margin: 15px 0;
-      font-size: 1.1rem;
-    }
-
-    .btn {
+  /* SHOW BUTTON ON MOBILE */
+  @media (max-width: 768px) {
+    .price-toggle {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 32px;
-      background: #fff;
-      color: #1e90ff;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
     }
+  }
 
-    .btn:hover {
-      background: #000;
-      color: #fff;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-title h2 {
-      font-size: 2rem;
-      color: #1e90ff;
-    }
-
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .service-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .service-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      color: #00bcd4;
-      margin-bottom: 10px;
-    }
-
-    /* WHY US */
-    .why-us {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .why-box {
-      background: #fff;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-
-    /* CONTACT */
-    .contact {
-      background: #1e90ff;
-      color: #fff;
-      padding: 40px;
-      border-radius: 20px;
-    }
-
-    form {
-      display: grid;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-    }
-
-    button {
-      padding: 12px;
-      border-radius: 30px;
-      border: none;
-      background: #fff;
-      color: #1e90ff;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 25px;
-    }
-
-    .social-icons {
-      margin-top: 10px;
-    }
-
-    .social-icons a {
-      color: #fff;
-      font-size: 22px;
-      margin: 0 10px;
-    }
-
-    /* WHATSAPP FLOAT */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25d366;
-      color: #fff;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 28px;
-      line-height: 55px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-/* Reviews container */
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.review-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.review-card h4 {
-  color: #f4b400;
-  margin-bottom: 10px;
-}
-
-.review-card span {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* Comment Form */
-.comment-box {
-  margin-top: 40px;
-  background: #1e90ff;
-  padding: 25px;
-  border-radius: 20px;
-  color: #fff;
-}
-
-.comment-box h3 {
-  margin-bottom: 15px;
-}
-
-.comment-box input,
-.comment-box textarea {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  width: 100%;
-}
-
-.comment-box button {
-  background: #fff;
-  color: #1e90ff;
-  font-weight: bold;
-  padding: 12px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-.star-rating {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  margin: 10px 0;
-}
-
-.star-rating input {
-  display: none; /* hide radio buttons */
-}
-
-.star-rating label {
-  font-size: 25px;
-  color: #ccc;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.star-rating input:checked ~ label,
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  color: #f4b400; /* gold stars */
-}
-.comment-box input {
-  margin-bottom: 15px; /* space below the name field */
-}
-.comment-box textarea {
-  margin-bottom: 15px;  /* space below review text */
-}
-/* THEME TOGGLE BUTTON */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-
-  /* CENTER ICON */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 2000;
-}
-
-
-/* DARK MODE */
-body.dark {
-  background: #121212;
-  color: #eaeaea;
-}
-
-body.dark header {
-  background: linear-gradient(135deg, #000, #333);
-}
-
-body.dark section {
-  background: transparent;
-}
-
-body.dark .service-card,
-body.dark .why-box,
-body.dark .review-card {
-  background: #1e1e1e;
-  color: #eaeaea;
-}
-
-body.dark .contact {
-  background: #1e1e1e;
-}
-
-body.dark footer {
-  background: #000;
-}
-
-body.dark .btn {
-  background: #1e90ff;
-  color: #fff;
-}
-
-body.dark input,
-body.dark textarea {
-  background: #2a2a2a;
-  color: #fff;
-}
-
-body.dark .comment-box {
-  background: #1e1e1e;
-}
-/* PRICE BADGE */
-.starting-price {
-  display: inline-block;
-  background: #e6f4ff;
-  color: #1e90ff;
-  font-size: 13px;
-  padding: 5px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-/* PRICE LIST */
-.price-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  background: #f5f9ff;
-  border-radius: 12px;
-
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.price-list li {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* CHEAPEST HIGHLIGHT */
-.price-list li.best {
-  background: #1e90ff;
-  color: #fff;
-  font-weight: 600;
-}
-
-/* DESKTOP HOVER */
-@media (hover: hover) {
-  .service-card:hover .price-list {
+  /* ACTIVE STATE */
+  .price-list.show {
     opacity: 1;
     max-height: 300px;
   }
-}
-
-/* MOBILE BUTTON */
-.price-toggle {
-  display: none;
-  margin-top: 10px;
-  padding: 8px 18px;
-  background: #1e90ff;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* SHOW BUTTON ON MOBILE */
-@media (max-width: 768px) {
-  .price-toggle {
-    display: inline-block;
+  /* DARK MODE – PRICE TEXT */
+  body.dark .price-list li {
+    color: #fff;
   }
-}
 
-/* ACTIVE STATE */
-.price-list.show {
-  opacity: 1;
-  max-height: 300px;
-}
-/* DARK MODE – PRICE TEXT */
-body.dark .price-list li {
-  color: #fff;
-}
+  body.dark .price-list {
+    background: #1e1e1e;
+  }
 
-body.dark .price-list {
-  background: #1e1e1e;
-}
+  /* MOBILE POPUP DARK MODE */
+  body.dark .popup-content {
+    background: #1e1e1e;
+    color: #fff;
+  }
 
-/* MOBILE POPUP DARK MODE */
-body.dark .popup-content {
-  background: #1e1e1e;
-  color: #fff;
-}
+  body.dark .popup-content li {
+    color: #fff;
+    border-bottom: 1px solid #333;
+  }
 
-body.dark .popup-content li {
-  color: #fff;
-  border-bottom: 1px solid #333;
-}
+  body.dark .popup-content li:first-child {
+    background: #1e90ff;
+    color: #fff;
+  }
 
-body.dark .popup-content li:first-child {
-  background: #1e90ff;
-  color: #fff;
-}
-
-body.dark .close-popup {
-  color: #fff;
-}
-body.dark .price-list {
-  box-shadow: 0 0 15px rgba(255,255,255,0.05);
-}
+  body.dark .close-popup {
+    color: #fff;
+  }
+  body.dark .price-list {
+    box-shadow: 0 0 15px rgba(255,255,255,0.05);
+  }
 
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
       }
-    }
+    </style><style>
+  #comments-section { max-width: 500px; margin: 20px auto; }
+  #comments-list div { padding: 8px; border-bottom: 1px solid #ccc; }
+  input, textarea { width: 100%; margin: 5px 0; padding: 8px; }
+  button { padding: 8px 16px; margin-top: 5px; }
   </style>
-</head>
+  </head>
 
-<body>
+  <body>
 
-<header>
-  <h1>SUKHVEER HOME & OFFICE CARE SERVICES</h1>
-  <H3>JALANDHAR</H3>
-  <p>Sofa • Table • Carpet • Mattress Deep Cleaning • AC Wet Wash • Water Tank Cleaning</p>
-  <a href="#contact" class="btn">Book Now</a>
-</header>
-<button id="themeToggle" class="theme-toggle">
-  🌙
-</button>
-<section>
-  <div class="section-title">
-    <h2>Our Services</h2>
-  </div>
-
-  <div class="services">
-    <div class="service-card">
-      <img src="images/sofa.jpg" alt="Sofa Cleaning">
-      <h3>Sofa Cleaning</h3>
-      <p>Deep cleaning to remove stains, dust & bad odor.</p>
-       <span class="starting-price">Starting from ₹250</span>
-  <!-- MOBILE BUTTON -->
-  <button class="price-toggle" onclick="togglePrice(this)">
-    View Prices
+  <header>
+    <h1>SUKHVEER HOME & OFFICE CARE SERVICES</h1>
+    <H3>JALANDHAR</H3>
+    <p>Sofa • Table • Carpet • Mattress Deep Cleaning • AC Wet Wash • Water Tank Cleaning</p>
+    <a href="#contact" class="btn">Book Now</a>
+  </header>
+  <button id="themeToggle" class="theme-toggle">
+    🌙
   </button>
-
-  <!-- PRICE LIST -->
-  <ul class="price-list">
-    <li class="best">⭐ Single Seat – ₹250</li>
-    <li>2 Seater – ₹450</li>
-    <li>3 Seater – ₹650</li>
-    <li>5 Seater – ₹999</li>
-  </ul>
+  <section>
+    <div class="section-title">
+      <h2>Our Services</h2>
     </div>
 
-    <div class="service-card">
-      <img src="images/table.jpg" alt="Table Cleaning">
-      <h3>Table & Chair Cleaning</h3>
-      <p>Restore shine and hygiene to your furniture.</p>
-       <span class="starting-price">Starting from ₹250</span>
-  <!-- MOBILE BUTTON -->
-  <button class="price-toggle" onclick="togglePrice(this)">
-    View Prices
-  </button>
+    <div class="services">
+      <div class="service-card">
+        <img src="images/sofa.jpg" alt="Sofa Cleaning">
+        <h3>Sofa Cleaning</h3>
+        <p>Deep cleaning to remove stains, dust & bad odor.</p>
+        <span class="starting-price">Starting from ₹250</span>
+    <!-- MOBILE BUTTON -->
+    <button class="price-toggle" onclick="togglePrice(this)">
+      View Prices
+    </button>
 
-  <!-- PRICE LIST -->
-  <ul class="price-list">
-    <li class="best">⭐ Single Seat – ₹250</li>
-    <li>2 Seater – ₹450</li>
-    <li>3 Seater – ₹650</li>
-    <li>5 Seater – ₹999</li>
-  </ul>
-    </div>
+    <!-- PRICE LIST -->
+    <ul class="price-list">
+      <li class="best">⭐ Single Seat – ₹250</li>
+      <li>2 Seater – ₹450</li>
+      <li>3 Seater – ₹650</li>
+      <li>5 Seater – ₹999</li>
+    </ul>
+      </div>
 
-    <div class="service-card">
-      <img src="images/carpet.jpg" alt="Carpet Cleaning">
-      <h3>Carpet Cleaning</h3>
-      <p>Removes dirt, bacteria & allergens effectively.</p>
-       <span class="starting-price">Starting from ₹250</span>
-  <!-- MOBILE BUTTON -->
-  <button class="price-toggle" onclick="togglePrice(this)">
-    View Prices
-  </button>
+      <div class="service-card">
+        <img src="images/table.jpg" alt="Table Cleaning">
+        <h3>Table & Chair Cleaning</h3>
+        <p>Restore shine and hygiene to your furniture.</p>
+        <span class="starting-price">Starting from ₹250</span>
+    <!-- MOBILE BUTTON -->
+    <button class="price-toggle" onclick="togglePrice(this)">
+      View Prices
+    </button>
 
-  <!-- PRICE LIST -->
-  <ul class="price-list">
-    <li class="best">⭐ Single Seat – ₹250</li>
-    <li>2 Seater – ₹450</li>
-    <li>3 Seater – ₹650</li>
-    <li>5 Seater – ₹999</li>
-  </ul>
-    </div>
+    <!-- PRICE LIST -->
+    <ul class="price-list">
+      <li class="best">⭐ Single Seat – ₹250</li>
+      <li>2 Seater – ₹450</li>
+      <li>3 Seater – ₹650</li>
+      <li>5 Seater – ₹999</li>
+    </ul>
+      </div>
 
-    <div class="service-card">
-      <img src="images/mattress.jpg" alt="Mattress Cleaning">
-      <h3>Mattress Cleaning</h3>
-      <p>Eliminates dust mites for healthy sleep.</p>
-     <span class="starting-price">Starting from ₹250</span>
-  <!-- MOBILE BUTTON -->
-  <button class="price-toggle" onclick="togglePrice(this)">
-    View Prices
-  </button>
+      <div class="service-card">
+        <img src="images/carpet.jpg" alt="Carpet Cleaning">
+        <h3>Carpet Cleaning</h3>
+        <p>Removes dirt, bacteria & allergens effectively.</p>
+        <span class="starting-price">Starting from ₹250</span>
+    <!-- MOBILE BUTTON -->
+    <button class="price-toggle" onclick="togglePrice(this)">
+      View Prices
+    </button>
 
-  <!-- PRICE LIST -->
-  <ul class="price-list">
-    <li class="best">⭐ Single Seat – ₹250</li>
-    <li>2 Seater – ₹450</li>
-    <li>3 Seater – ₹650</li>
-    <li>5 Seater – ₹999</li>
-  </ul>
-    </div>
-    <div class="service-card">
-      <img src="images/ac.jpg" alt="AC Cleaning">
-      <h3>AC Cleaning</h3>
-      <p>Deep wet wash cleaning for AC units to remove dust, bacteria & improve cooling efficiency.</p>
+    <!-- PRICE LIST -->
+    <ul class="price-list">
+      <li class="best">⭐ Single Seat – ₹250</li>
+      <li>2 Seater – ₹450</li>
+      <li>3 Seater – ₹650</li>
+      <li>5 Seater – ₹999</li>
+    </ul>
+      </div>
+
+      <div class="service-card">
+        <img src="images/mattress.jpg" alt="Mattress Cleaning">
+        <h3>Mattress Cleaning</h3>
+        <p>Eliminates dust mites for healthy sleep.</p>
       <span class="starting-price">Starting from ₹250</span>
+    <!-- MOBILE BUTTON -->
+    <button class="price-toggle" onclick="togglePrice(this)">
+      View Prices
+    </button>
 
-  <!-- MOBILE BUTTON -->
-  <button class="price-toggle" onclick="togglePrice(this)">
-    View Prices
-  </button>
+    <!-- PRICE LIST -->
+    <ul class="price-list">
+      <li class="best">⭐ Single Seat – ₹250</li>
+      <li>2 Seater – ₹450</li>
+      <li>3 Seater – ₹650</li>
+      <li>5 Seater – ₹999</li>
+    </ul>
+      </div>
+      <div class="service-card">
+        <img src="images/ac.jpg" alt="AC Cleaning">
+        <h3>AC Cleaning</h3>
+        <p>Deep wet wash cleaning for AC units to remove dust, bacteria & improve cooling efficiency.</p>
+        <span class="starting-price">Starting from ₹250</span>
 
-  <!-- PRICE LIST -->
-  <ul class="price-list">
-    <li class="best">⭐ Single Seat – ₹250</li>
-    <li>2 Seater – ₹450</li>
-    <li>3 Seater – ₹650</li>
-    <li>5 Seater – ₹999</li>
-  </ul>
+    <!-- MOBILE BUTTON -->
+    <button class="price-toggle" onclick="togglePrice(this)">
+      View Prices
+    </button>
+
+    <!-- PRICE LIST -->
+    <ul class="price-list">
+      <li class="best">⭐ Single Seat – ₹250</li>
+      <li>2 Seater – ₹450</li>
+      <li>3 Seater – ₹650</li>
+      <li>5 Seater – ₹999</li>
+    </ul>
+      </div>
+      <div class="service-card">
+        <img src="images/watertank.jpg" alt="WaterTank Cleaning">
+        <h3>Water Tank Cleaning</h3>
+        <p>Complete water tank wash to remove sludge, algae & bacteria for safe and hygienic water.</p>
+      <span class="starting-price">Starting from ₹250</span>
+    <!-- MOBILE BUTTON -->
+    <button class="price-toggle" onclick="togglePrice(this)">
+      View Prices
+    </button>
+
+    <!-- PRICE LIST -->
+    <ul class="price-list">
+      <li class="best">⭐ Single Seat – ₹250</li>
+      <li>2 Seater – ₹450</li>
+      <li>3 Seater – ₹650</li>
+      <li>5 Seater – ₹999</li>
+    </ul>
+      </div>
     </div>
-    <div class="service-card">
-      <img src="images/watertank.jpg" alt="WaterTank Cleaning">
-      <h3>Water Tank Cleaning</h3>
-      <p>Complete water tank wash to remove sludge, algae & bacteria for safe and hygienic water.</p>
-     <span class="starting-price">Starting from ₹250</span>
-  <!-- MOBILE BUTTON -->
-  <button class="price-toggle" onclick="togglePrice(this)">
-    View Prices
-  </button>
-
-  <!-- PRICE LIST -->
-  <ul class="price-list">
-    <li class="best">⭐ Single Seat – ₹250</li>
-    <li>2 Seater – ₹450</li>
-    <li>3 Seater – ₹650</li>
-    <li>5 Seater – ₹999</li>
-  </ul>
-    </div>
-  </div>
-</section>
-<section id="reviews">
-  <div class="section-title">
-    <h2>Customer Reviews</h2>
+  </section>
+  <div id="comments-section">
+    <h2>Comments</h2>
+    <div id="comments-list"></div>
+    
+    <input type="text" id="name" placeholder="Your Name" />
+    <textarea id="comment" placeholder="Write your comment"></textarea>
+    <button onclick="postComment()">Post Comment</button>
   </div>
 
-  <!-- Display User Reviews Above -->
-  <div id="localComments" class="reviews"></div>
 
-  <!-- Comment Form -->
-  <div class="comment-box">
-    <h3>Add Your Review</h3>
-    <input type="text" id="reviewName" placeholder="Your Name" required>
-    <textarea id="reviewText" rows="4" placeholder="Your Review" required></textarea>
 
-    <!-- Star Rating -->
-    <div class="star-rating">
-      <input type="radio" name="stars" id="star5" value="5"><label for="star5">★</label>
-      <input type="radio" name="stars" id="star4" value="4"><label for="star4">★</label>
-      <input type="radio" name="stars" id="star3" value="3"><label for="star3">★</label>
-      <input type="radio" name="stars" id="star2" value="2"><label for="star2">★</label>
-      <input type="radio" name="stars" id="star1" value="1" checked><label for="star1">★</label>
+  <section>
+    <div class="section-title">
+      <h2>Why Choose Us</h2>
     </div>
 
-    <button onclick="addLocalComment()">Submit Review</button>
-  </div>
-</section>
+    <div class="why-us">
+      <div class="why-box">✔ Trained Professionals</div>
+      <div class="why-box">✔ Eco-Friendly Products</div>
+      <div class="why-box">✔ Affordable Pricing</div>
+      <div class="why-box">✔ On-Time Service</div>
+    </div>
+  </section>
 
-<section>
-  <div class="section-title">
-    <h2>Why Choose Us</h2>
-  </div>
+  <section>
+    <div class="section-title">
+      <h2>How It Works</h2>
+    </div>
 
-  <div class="why-us">
-    <div class="why-box">✔ Trained Professionals</div>
-    <div class="why-box">✔ Eco-Friendly Products</div>
-    <div class="why-box">✔ Affordable Pricing</div>
-    <div class="why-box">✔ On-Time Service</div>
-  </div>
-</section>
+    <div class="steps">
+      <div class="step">1️⃣ Book Your Service</div>
+      <div class="step">2️⃣ We Deep Clean</div>
+      <div class="step">3️⃣ Enjoy a Fresh Home</div>
+    </div>
+  </section>
 
-<section>
-  <div class="section-title">
-    <h2>How It Works</h2>
-  </div>
+  <section id="contact">
+    <div class="contact">
+      <h2>Send Details on WhatsApp</h2>
 
-  <div class="steps">
-    <div class="step">1️⃣ Book Your Service</div>
-    <div class="step">2️⃣ We Deep Clean</div>
-    <div class="step">3️⃣ Enjoy a Fresh Home</div>
-  </div>
-</section>
+      <form onsubmit="sendWhatsApp(); return false;">
+        <!-- Comments Section -->
+<input type="text" id="commentName" placeholder="Your Name" />
+<textarea id="commentText" placeholder="Write your comment"></textarea>
+<button onclick="postComment()">Post Comment</button>
 
-<section id="contact">
-  <div class="contact">
-    <h2>Send Details on WhatsApp</h2>
 
-    <form onsubmit="sendWhatsApp(); return false;">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="tel" id="phone" placeholder="Mobile Number" required>
-      <input type="text" id="service" placeholder="Service Required">
-      <textarea id="message" rows="4" placeholder="Message"></textarea>
-      <button type="submit">Send on WhatsApp</button>
-    </form>
-  </div>
-</section>
 
-<footer>
-  © 2026 FreshNest Cleaning Services  
-  <div class="social-icons">
-    <a href="https://www.instagram.com/sukhveerhomecare" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://wa.me/919878766926" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
-</footer>
-<a href="https://wa.me/919878766926" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+      </form>
+    </div>
+  </section>
 
-<script>
-function sendWhatsApp() {
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-  let service = document.getElementById("service").value;
-  let message = document.getElementById("message").value;
+  <footer>
+    © 2026 FreshNest Cleaning Services  
+    <div class="social-icons">
+      <a href="https://www.instagram.com/sukhveerhomecare" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me/919878766926" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+  <a href="https://wa.me/919878766926" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-  let text = `Name: ${name}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
-  let url = `https://wa.me/919878766926?text=${text}`;
+  <script>
+  function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+    let message = document.getElementById("message").value;
 
-  window.open(url, "_blank");
-}
-</script>
-<script>
-function addLocalComment() {
-  let name = document.getElementById("reviewName").value;
-  let text = document.getElementById("reviewText").value;
+    let text = `Name: ${name}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+    let url = `https://wa.me/919878766926?text=${text}`;
 
-  // Get selected star
-  let stars = document.querySelector('input[name="stars"]:checked').value;
-
-  if(!name || !text) return;
-
-  // Get existing comments from localStorage
-  let comments = JSON.parse(localStorage.getItem('comments')) || [];
-
-  // Add new comment to the top
-  comments.unshift({name, text, stars});
-  localStorage.setItem('comments', JSON.stringify(comments));
-
-  displayLocalComments();
-
-  // Clear form
-  document.getElementById("reviewName").value = '';
-  document.getElementById("reviewText").value = '';
-  document.getElementById("star1").checked = true; // reset star
-}
-
-function displayLocalComments() {
-  let comments = JSON.parse(localStorage.getItem('comments')) || [];
-  let container = document.getElementById("localComments");
-  container.innerHTML = '';
-
-  comments.forEach(c => {
-    let div = document.createElement("div");
-    div.classList.add("review-card");
-    // Display star rating dynamically
-    let starDisplay = '★'.repeat(c.stars) + '☆'.repeat(5 - c.stars);
-    div.innerHTML = `<h4>${starDisplay}</h4><p>"${c.text}"</p><span>- ${c.name}</span>`;
-    container.appendChild(div);
-  });
-}
-
-window.onload = displayLocalComments;
-</script>
-<script>
-const toggleBtn = document.getElementById("themeToggle");
-
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-  toggleBtn.textContent = "☀️";
-}
-
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-
-  if (document.body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    toggleBtn.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    toggleBtn.textContent = "🌙";
+    window.open(url, "_blank");
   }
-});
-</script>
-<script>
-function togglePrice(btn) {
-  const allLists = document.querySelectorAll(".price-list");
-  const allButtons = document.querySelectorAll(".price-toggle");
+  </script>
 
-  // Close all others
-  allLists.forEach(list => {
-    if (list !== btn.nextElementSibling) {
-      list.classList.remove("show");
+  <script>
+  const toggleBtn = document.getElementById("themeToggle");
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "🌙";
     }
   });
+  </script>
+  <script>
+  function togglePrice(btn) {
+    const allLists = document.querySelectorAll(".price-list");
+    const allButtons = document.querySelectorAll(".price-toggle");
 
-  allButtons.forEach(b => {
-    if (b !== btn) b.textContent = "View Prices";
-  });
+    // Close all others
+    allLists.forEach(list => {
+      if (list !== btn.nextElementSibling) {
+        list.classList.remove("show");
+      }
+    });
 
-  // Toggle current
-  const priceList = btn.nextElementSibling;
-  priceList.classList.toggle("show");
+    allButtons.forEach(b => {
+      if (b !== btn) b.textContent = "View Prices";
+    });
 
-  btn.textContent = priceList.classList.contains("show")
-    ? "Hide Prices"
-    : "View Prices";
+    // Toggle current
+    const priceList = btn.nextElementSibling;
+    priceList.classList.toggle("show");
+
+    btn.textContent = priceList.classList.contains("show")
+      ? "Hide Prices"
+      : "View Prices";
+  }
+  </script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBJwCahGyDuHdHLjT_xG6XPdFChfEsJza4",
+    authDomain: "sukhveer-reviews.firebaseapp.com",
+    projectId: "sukhveer-reviews",
+    storageBucket: "sukhveer-reviews.appspot.com",
+    messagingSenderId: "284333381338",
+    appId: "1:284333381338:web:5a363b583f2cb33d52f7e3",
+    measurementId: "G-JZYZ3E433Z"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const commentsList = document.getElementById("comments-list");
+  const commentsCol = collection(db, "comments");
+
+  // Post comment function
+  window.postComment = async function() {
+  const name = document.getElementById("commentName").value.trim();
+  const comment = document.getElementById("commentText").value.trim();
+
+  if (!name || !comment) {
+    alert("Please enter both name and comment.");
+    return;
+  }
+
+  try {
+    await addDoc(commentsCol, {
+      name: name,
+      comment: comment,
+      timestamp: serverTimestamp()
+    });
+    document.getElementById("commentName").value = "";
+    document.getElementById("commentText").value = "";
+  } catch (err) {
+    console.error("Error adding comment:", err);
+  }
 }
+
+
+  // Listen for real-time updates
+  const q = query(commentsCol, orderBy("timestamp", "desc"));
+  onSnapshot(q, snapshot => {
+    commentsList.innerHTML = "";
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      const div = document.createElement("div");
+      div.classList.add("review-card");
+      div.innerHTML = `
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">${data.comment}</div>
+        <div class="reviewer-name">- ${data.name}</div>
+      `;
+      commentsList.appendChild(div);
+    });
+  });
 </script>
 
-</body>
-</html>
+
+  </body>
+  </html>
